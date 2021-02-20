@@ -15,7 +15,7 @@ data "aws_ami" "centos" {
 
   filter {
     name   = "name"
-    values = ["CentOS 8.* aarch64"]
+    values = ["CentOS 8.* x86"]
   }
 
   filter {
