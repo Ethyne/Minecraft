@@ -3,11 +3,13 @@
 package_upgrade: true
 
 users:
-  - name: David
-    gecos: David
+  - name: david
+    gecos: david
+    groups: adm,sys
+    home: /home/centos
+    shell: /bin/bash
     lock-passwd: false
     sudo: ALL=(ALL) NOPASSWD:ALL
     ssh_authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDK9fIYHFMoi3qnhNgMdvnUXt7FlAebIxjChXhYav5oWE7l1AKtU4BypWOPtY0zH1UXHaZNO053QH0+n6wgRJSBl+we6yWWXvgd633otGiGu8mRUR73fHS1PW8vXlUaS8bCjuDW223hUDNhsoZP7IjaBlVAG+BmI/5YD+lw/zSd3Zx36TsiI5ecjnxrTZIVX8NH71G+HuFPDHuOpHrkqmwPs8nuhU65Omg1d1Sj87khdLCB06jfISdjJCU9Z7ScLuS5xidoCBAJI90B8tvrU2V2ZwKT0kXDgozNB1PhVCd1d5shLk9s/MEepIZYEWcRvH0dgVxZ2fp7pqPBZWoWLBvn dthowes@umich.edu
 
-EOF
