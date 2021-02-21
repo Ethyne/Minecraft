@@ -15,7 +15,7 @@ packages:
   - java-11-openjdk-devel
   - screen
   
-runvmd: 
+runcmd: 
   - sudo su terraform
   - mkdir minecraft
   - cd minecraft
