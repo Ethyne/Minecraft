@@ -16,6 +16,6 @@ packages:
   - screen
   
 runcmd: 
-  - sudo su terraform
+  - sudo su david
   - mkdir minecraft
   - cd minecraft
