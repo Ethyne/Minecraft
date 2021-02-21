@@ -1,32 +1,9 @@
-#cloud-config
-# Add groups to the system
-# Adds the ubuntu group with members 'root' and 'sys'
-# and the empty group hashicorp.
-groups:
-  - centos: [root,sys]
-  - hashicorp
-
-# Add users to the system. Users are added after groups are added.
-# Honestly, a lot of this is default code from a hashicorp tutorial. I'm going to try with the default centos user at some point. 
-users:
-  - default
-  - name: terraform
-    gecos: terraform
-    shell: /bin/bash
-    primary_group: hashicorp
-    sudo: ALL=(ALL) NOPASSWD:ALL
-    groups: users, admin
-    lock_passwd: false
-    ssh_authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD2GXFhyfUjXqAlgWLRYI8UQbKfz5fpoy4oKW7ZYEqdMvvca/JyThyyZATz0SD0fgxKzD+Vc8ecCM6JEfKT2xZJVgVL7O50TGqUpzLWLJtItUcrskUsOrhLRGsAJuNOV2OeNeHGdYeMOKflBQ4YEUqjRnmQwA/Sz7/kzcc9fTzsu2YHv9UqYy1z+92kIg4XNDUXxr5O+w5bZTaYG0
-eyiOJr1gTkGVtrRjsoAmUivoCmz08mWIqvXPSNPRGBOuGtlC+Izzx0Qo+2Duyp5Mjf5EA5lItRo2GzfgDp6qVPEoG2ZfuNLk2Hw6PqkzPifOQwYQ0IeJyr0P2WRmmwqii4k/Hd dthowes@umich.edu
-
 # Download java and screen, I think I'm doing this right
 packages:
   - java-11-openjdk-devel
   - screen
   
 runvmd: 
-  - sudo su terraform
+  - sudo su centos
   - mkdir minecraft
   - cd minecraft
