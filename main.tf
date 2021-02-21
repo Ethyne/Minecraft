@@ -98,7 +98,7 @@ resource "aws_security_group" "sg_minecraft" {
 }
 
 data "template_file" "user_data" {
-  template = file("https://github.com/Ethyne/Minecraft/tree/main/scripts/cloudinit.yaml")
+  template = file("scripts/cloudinit.yaml")
 }
 
 resource "aws_instance" "minecraft" {
