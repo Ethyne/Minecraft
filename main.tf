@@ -97,12 +97,17 @@ resource "aws_security_group" "sg_minecraft" {
   }
 }
 
+data "template_file" "user_data" {
+  template = file("../scripts/cloudinit.yaml")
+}
+
 resource "aws_instance" "minecraft" {
   ami = data.aws_ami.centos.id
   instance_type = "t2.medium"
   subnet_id = aws_subnet.subnet_public.id
   vpc_security_group_ids = [aws_security_group.sg_minecraft.id]
   associate_public_ip_address = true
+  user_data = data.template_file.user_data.rendered
   
   tags = {
     Application = "Minecraft"
