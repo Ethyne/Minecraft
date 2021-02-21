@@ -23,7 +23,7 @@ data "aws_ami" "centos" {
     values = ["hvm"]
   }
 
-  owners = ["125523088429"] # Canonical
+  owners = ["125523088429"] 
 }
 
 resource "aws_vpc" "vpc" {
@@ -55,8 +55,8 @@ resource "aws_route_table_association" "rta_subnet_public" {
   route_table_id = aws_route_table.rtb_public.id
 }
 
-resource "aws_security_group" "sg_22_80" {
-  name   = "sg_22"
+resource "aws_security_group" "sg_minecraft" {
+  name   = "sg_minecraft"
   vpc_id = aws_vpc.vpc.id
 
   # SSH access from the VPC
@@ -100,6 +100,9 @@ resource "aws_security_group" "sg_22_80" {
 resource "aws_instance" "minecraft" {
   ami = data.aws_ami.centos.id
   instance_type = "t2.medium"
+  subnet_id = aws_subnet.subnet_public.id
+  vpc_security_group_ids = [aws_security_group.sg_minecraft.id]
+  associate_public_ip_address = true
   
   tags = {
     Application = "Minecraft"
