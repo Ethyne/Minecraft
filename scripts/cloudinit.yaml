@@ -25,7 +25,7 @@ runcmd:
   - sudo mv server.jar /home/david/minecraft/minecraft_server.1.16.5.jar
   - sudo yum -y install screen
   - sudo yum -y install java-11-openjdk-devel
-  - java -Xmx1024M -Xms1024M -jar /home/david/minecraft/minecraft_server.1.16.5.jar nogui
+  - sudo java -Xmx1024M -Xms1024M -jar /home/david/minecraft/minecraft_server.1.16.5.jar nogui
   - echo "eula=true" > /home/david/minecraft/eula.txt
-  - screen -S "Minecraft server"
-  - java -Xmx1024M -Xms1024M -jar /home/david/minecraft/minecraft_server.1.16.5.jar nogui
+  - sudo screen -S "Minecraft server"
+  - sudo java -Xmx1024M -Xms1024M -jar /home/david/minecraft/minecraft_server.1.16.5.jar nogui
