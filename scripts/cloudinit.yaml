@@ -4,7 +4,7 @@ users:
   - name: david
     gecos: david
     groups: adm,sys
-    home: /home/david
+    home: /home/centos
     shell: /bin/bash
     lock-passwd: false
     sudo: ALL=(ALL) NOPASSWD:ALL
