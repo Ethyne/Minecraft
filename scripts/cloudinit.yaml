@@ -4,12 +4,14 @@ users:
   - name: david
     gecos: david
     groups: adm,sys
-    home: /home/centos
+    home: /home/david
     shell: /bin/bash
     lock-passwd: false
     sudo: ALL=(ALL) NOPASSWD:ALL
     ssh_authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDK9fIYHFMoi3qnhNgMdvnUXt7FlAebIxjChXhYav5oWE7l1AKtU4BypWOPtY0zH1UXHaZNO053QH0+n6wgRJSBl+we6yWWXvgd633otGiGu8mRUR73fHS1PW8vXlUaS8bCjuDW223hUDNhsoZP7IjaBlVAG+BmI/5YD+lw/zSd3Zx36TsiI5ecjnxrTZIVX8NH71G+HuFPDHuOpHrkqmwPs8nuhU65Omg1d1Sj87khdLCB06jfISdjJCU9Z7ScLuS5xidoCBAJI90B8tvrU2V2ZwKT0kXDgozNB1PhVCd1d5shLk9s/MEepIZYEWcRvH0dgVxZ2fp7pqPBZWoWLBvn dthowes@umich.edu
+
+output: { all: "| tee -a /home/david/log/cloud-init-output.log" }
 
 packages:
   - wget
@@ -18,5 +20,5 @@ runcmd:
   - sudo su david
   - mkdir /home/david/minecraft
   - cd minecraft
-  - [sudo, wget, "https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar"]
+  - [wget, "https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar"]
   - mv server.jar minecraft_server.1.16.5.jar
