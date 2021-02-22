@@ -16,7 +16,6 @@ output: { all: "| tee -a /home/david/cloud-init-output.log" }
 packages:
   - wget
   - epel-release
-  - screen
   
 runcmd: 
   - sudo su david
@@ -24,3 +23,5 @@ runcmd:
   - sudo cd /home/david/minecraft
   - "sudo wget https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar"
   - sudo mv server.jar /home/david/minecraft/minecraft_server.1.16.5.jar
+  - sudo yum install screen
+  - sudo yum install java-11-openjdk-devel
