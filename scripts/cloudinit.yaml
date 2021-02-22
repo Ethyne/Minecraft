@@ -15,6 +15,7 @@ output: { all: "| tee -a /home/david/cloud-init-output.log" }
 
 packages:
   - wget
+  - epel-release
   
 runcmd: 
   - sudo su david
