@@ -112,6 +112,5 @@ resource "aws_instance" "minecraft" {
   
   tags = {
     Application = "Minecraft"
-    Tag = "This is a tag"
   }
 }
