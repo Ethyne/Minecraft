@@ -113,5 +113,6 @@ resource "aws_instance" "minecraft" {
   tags = {
     Application = "Minecraft"
     Terraform = "Yes"
+    Coffee = "Starbucks"
   }
 }
